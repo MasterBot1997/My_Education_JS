@@ -1,7 +1,7 @@
 // Как будто название корневой папки 'является рабочей средой'
-package java_project;
+package Lesson.java_project;
 import java.io.FileWriter;
-import java.util.Scanner;
+// import java.util.Scanner;
 import java.io.IOException;
 // Поиграть с инкреметом и дикрементом
 // public class program {
@@ -31,14 +31,14 @@ import java.io.IOException;
 // }
 
 // пример вычисления с получением данных через метод
-// public class program {
-//     public static void main(String[] args) {
-//         int a = lib.data(), b = lib.data();
-//         int c = a + b;
-//         String res = a + " + " + b + " = " + c;
-//         System.out.println(res);
-//     } 
-// }
+public class program {
+    public static void main(String[] args) {
+        int a = lib.data(), b = lib.data();
+        int c = a + b;
+        String res = a + " + " + b + " = " + c;
+        System.out.println(res);
+    } 
+}
 
 // пример вычисления с получением данных через метод
 // public class program {
@@ -67,16 +67,16 @@ import java.io.IOException;
 
 
 // Работа с файлами
-public class program {
-    public static void main(String[] args) throws IOException {
-       try (FileWriter fw = new FileWriter("file.txt", false)) {
-            fw.write("line 1");
-            fw.append('\n');
-            fw.append('2');
-            fw.append('\n');
-            fw.append("line 3");
-            fw.flush();
-       }
-    } program (IOException ex) {
-        System.out.println(ex.getMessage());
-} }
+// public class program {
+//     public static void main(String[] args) throws IOException {
+//        try (FileWriter fw = new FileWriter("file.txt", false)) {
+//             fw.write("line 1");
+//             fw.append('\n');
+//             fw.append('2');
+//             fw.append('\n');
+//             fw.append("line 3");
+//             fw.flush();
+//        }
+//     } program (IOException ex) {
+//         System.out.println(ex.getMessage());
+// } }
