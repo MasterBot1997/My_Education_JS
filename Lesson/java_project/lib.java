@@ -1,4 +1,5 @@
-package java_project;
+package Lesson.java_project;
+
 import java.util.Scanner;
 
 public class lib {
