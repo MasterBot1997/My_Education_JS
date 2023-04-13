@@ -10,6 +10,7 @@ public class lib {
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Number: ");
         Integer number = iScanner.nextInt();
+        iScanner.close();
         return number;
     }
 }
