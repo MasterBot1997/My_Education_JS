@@ -7,6 +7,7 @@ public class lib {
         Scanner sc = new Scanner(System.in);
         System.out.printf("Number: ");
         int a = sc.nextInt();
+        sc.close();
         return a;
     }
     static int sum(int a, int b){
