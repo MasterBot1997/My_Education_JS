@@ -170,3 +170,23 @@ System.out.printf("%d + %d = %d \n", a, b, c); - используем printf т.
 - replace() - замена одной подстроки на другую
 
 https://app.idroo.com/boards/PDG6QPrXo1
+
+11. Логгер
+
+// Создали объект типа логгер для класса Task01(или класс в котором мы работаем)
+Logger logger = Logger.getLogger(Task01.class.getName());
+// Консоль хэндлер выводит все наши данные о логировании в терминал
+// ConsoleHandler ch = new ConsoleHandler();
+FileHandler fh = new FileHandler("log.txt");
+// указываем логгеру наш хэндлер как аргумент что бы он понимал куда логи выводить
+// logger.addHandler(ch);
+logger.addHandler(fh);
+
+// Для консоли
+SimpleFormatter sFormat = new SimpleFormatter();
+// ch.setFormatter(sFormat);
+fh.setFormatter(sFormat);
+
+// Вывод в xml файл
+// XMLFormatter xml = new XMLFormatter();
+// ch.setFormatter(xml);
