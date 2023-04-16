@@ -1,6 +1,8 @@
 package houmWork.h2.Task01;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,7 +30,9 @@ public class Task01 {
                     arr[j] = temp;
                     Task01.printArray(arr);
                     System.out.println();
-                    logger.log(Level.INFO, Task01.strArray(arr));
+                    // лог с возвращаемой строкой из метода ниже
+                    // logger.log(Level.INFO, Task01.strArray(arr));
+                    logger.log(Level.INFO, Arrays.toString(arr));
                 }
             }
         }
@@ -44,11 +48,12 @@ public class Task01 {
         }
     }
 
-    static String strArray(int[] arr){
-        StringBuilder b = new StringBuilder();
-        for (int i = 0; i < arr.length; i++) {
-            b.append(arr[i]);
-        }
-        return b.toString();
-    }
+    // Метод возвращения массива для лога
+    // static String strArray(int[] arr){
+    //     StringBuilder b = new StringBuilder();
+    //     for (int i = 0; i < arr.length; i++) {
+    //         b.append(arr[i]);
+    //     }
+    //     return b.toString();
+    // }
 }
