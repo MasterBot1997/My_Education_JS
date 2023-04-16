@@ -28,7 +28,6 @@ public class Task01 {
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
-                    Task01.printArray(arr);
                     System.out.println();
                     // лог с возвращаемой строкой из метода ниже
                     // logger.log(Level.INFO, Task01.strArray(arr));
@@ -37,23 +36,5 @@ public class Task01 {
             }
         }
         System.out.println();
-        Task01.printArray(arr);
-
     }
-
-    // Функция печати массива в консоль
-    static void printArray(int[] b) {
-        for (int i : b) {
-            System.out.printf("%d ", i);
-        }
-    }
-
-    // Метод возвращения массива для лога
-    // static String strArray(int[] arr){
-    //     StringBuilder b = new StringBuilder();
-    //     for (int i = 0; i < arr.length; i++) {
-    //         b.append(arr[i]);
-    //     }
-    //     return b.toString();
-    // }
 }
