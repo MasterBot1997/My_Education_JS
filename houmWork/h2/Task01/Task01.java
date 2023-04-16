@@ -1,14 +1,11 @@
 package houmWork.h2.Task01;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
-// import javax.sound.midi.MidiDevice.Info;
 
 public class Task01 {
     public static void main(String[] args) throws SecurityException, IOException {
