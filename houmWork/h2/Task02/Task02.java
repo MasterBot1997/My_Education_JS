@@ -28,14 +28,8 @@ public class Task02 {
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
             String data = Task02.newL(sc);
-            // System.out.println(data);
-            // Task02.printData(data);
             System.out.println(Task02.printData(data));
         }
-        // String data = Task02.newL(sc);
-        // System.out.println(data);
-
-        // Task02.printData(data);
 
         sc.close();
     }
@@ -53,12 +47,6 @@ public class Task02 {
 
         return newLine.toString();
     }
-
-    // Метод вывода результата в консоль 
-    // static void printData(String da) {
-    //     System.out.println(
-    //             "Студент " + da.split(" ")[1] + " получил " + da.split(" ")[3] + " по предмету " + da.split(" ")[5]);
-    // }
 
     static String printData(String da){
         StringBuilder printDa = new StringBuilder();
