@@ -26,8 +26,6 @@ public class Task01 {
                     arr[i] = arr[j];
                     arr[j] = temp;
                     System.out.println();
-                    // лог с возвращаемой строкой из метода ниже
-                    // logger.log(Level.INFO, Task01.strArray(arr));
                     logger.log(Level.INFO, Arrays.toString(arr));
                 }
             }
