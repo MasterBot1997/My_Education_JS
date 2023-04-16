@@ -13,7 +13,7 @@ import java.util.logging.SimpleFormatter;
 
 public class task03 {
     public static void main(String[] args) throws SecurityException, IOException {
-        Logger logger = Logger.getLogger(Task03.class.getName());
+        Logger logger = Logger.getLogger(task03.class.getName());
         FileHandler fh = new FileHandler("log.txt");
         logger.addHandler(fh);
         SimpleFormatter sFormat = new SimpleFormatter();
@@ -28,24 +28,29 @@ public class task03 {
         String simb = sc.next();
         switch (simb) {
             case "+":
-                logger.info(num1 + " " + simb + " " + num2 + " = " + calcOp.sum(num1, num2));
                 System.out.printf("%d %s %d = %d", num1, simb, num2, calcOp.sum(num1, num2));
+                logger.info(num1 + " " + simb + " " + num2 + " = " + calcOp.sum(num1, num2));
                 break;
             case "-":
+
                 System.out.printf("%d %s %d = %d", num1, simb, num2, calcOp.dif(num1, num2));
+                logger.info(num1 + " " + simb + " " + num2 + " = " + calcOp.dif(num1, num2));
                 break;
             case "*":
                 System.out.printf("%d %s %d = %d", num1, simb, num2, calcOp.mult(num1, num2));
+                logger.info(num1 + " " + simb + " " + num2 + " = " + calcOp.mult(num1, num2));
                 break;
             case "/":
                 if (num2 != 0) {
                     System.out.printf("%d %s %d = %d", num1, simb, num2, calcOp.div(num1, num2));
+                    logger.info(num1 + " " + simb + " " + num2 + " = " + calcOp.div(num1, num2));
                 } else {
                     System.out.println("В знаменателе не может быть 0!");
                 }
                 break;
             default:
                 System.out.println("Неверный символ операции");
+                logger.warning("Неверный символ!");
                 break;
         }
         sc.close();
