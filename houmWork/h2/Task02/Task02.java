@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Task02 {
     public static void main(String[] args) throws FileNotFoundException {
         String pathProject = System.getProperty("user.dir");
-        String pathFile = pathProject.concat("/file.txt");
+        String pathFile = pathProject.concat("/houmWork/h2/Task02/file.txt");
         File file = new File(pathFile);
 
         Scanner sc = new Scanner(file, "UTF-8");
