@@ -2,8 +2,6 @@ package houmWork.h2.Task02;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 // 2. Дана строка (получение через обычный текстовый файл!!!)
@@ -25,7 +23,8 @@ public class Task02 {
         String pathFile = pathProject.concat("/file.txt");
         File file = new File(pathFile);
 
-        Scanner sc = new Scanner(file);
+        Scanner sc = new Scanner(file, "UTF-8");
+
         while (sc.hasNextLine()) {
             String data = Task02.newL(sc);
             System.out.println(Task02.printData(data));
@@ -48,9 +47,10 @@ public class Task02 {
         return newLine.toString();
     }
 
-    static String printData(String da){
+    static String printData(String da) {
         StringBuilder printDa = new StringBuilder();
-        printDa.append("Студент " + da.split(" ")[1] + " получил " + da.split(" ")[3] + " по предмету " + da.split(" ")[5]);
+        printDa.append(
+                "Студент " + da.split(" ")[1] + " получил " + da.split(" ")[3] + " по предмету " + da.split(" ")[5]);
         return printDa.toString();
     }
 }
