@@ -61,9 +61,7 @@ public class Task01 {
         String numberPhone = scan.next();
         if (newTelephones.containsKey(lastName)) {
             newTelephones.put(lastName, newTelephones.get(lastName) + " " + numberPhone);
-            // System.out.println(newTelephones.values());
         } else {
-            System.out.println("2");
             newTelephones.put(lastName, numberPhone);
         }
         return newTelephones;
