@@ -1,7 +1,6 @@
 package houmWork.h4.Task02;
 
 import java.util.LinkedList;
-import java.util.Scanner;
 
 // 2) Реализуйте очередь с помощью LinkedList со следующими методами:
 // enqueue() - помещает элемент в конец очереди,
@@ -12,7 +11,6 @@ public class Task02 {
 
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
-        Scanner sc = new Scanner(System.in);
         list.add("string");
         list.add("void");
         list.add("class");
@@ -23,10 +21,6 @@ public class Task02 {
         System.out.println(string);
         list = dequeue(list);
         System.out.println(list);
-
-        
-
-        sc.close();
     }
 
     static LinkedList<String> enqueue(int i, LinkedList<String> lst){
