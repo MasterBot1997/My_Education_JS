@@ -1,7 +1,7 @@
 package houmWork.h5.Task03;
 
 import java.util.Arrays;
-// import java.util.Random;
+import java.util.Random;
 
 // На шахматной доске расставить 8 ферзей так, чтобы они не били друг друга. И вывести Доску. Пример вывода доски 8x8
 // 0x000000
@@ -11,43 +11,84 @@ import java.util.Arrays;
 public class Task03 {
     public static void main(String[] args) {
         String[][] table = new String[8][8];
-        // Random rnd = new Random();
-        // int firstMoveI = rnd.nextInt(8);
-        // int firstMoveJ = rnd.nextInt(8);
+        Random rnd = new Random();
 
-        int firstMoveI = 4;
-        int firstMoveJ = 5;
+        // Через рандом задаю расположение первого ферзя
+        int firstMoveI = rnd.nextInt(8);
+        int firstMoveJ = rnd.nextInt(8);
+        table[firstMoveI][firstMoveJ] = "X";
 
         // Два цикла создания и печати доски c первым ферзем
-        for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table.length; j++) {
-                if (i == firstMoveI && j == firstMoveJ) {
+        for (int j = 0; j < table.length; j++) {
+            for (int i = 0; i < table.length; i++) {
+                if (check(table, i, j)) {
                     table[i][j] = "X";
-                } else {
+                } else if (table[i][j]== "X") {
+                    continue;
+                }else{
                     table[i][j] = "0";
                 }
 
             }
         }
 
+        Task03.printBoard(table);
+
+        // Просто для самопроверки добавил вывод кол ва ферзей в консоль
+        int count = 0;
         for (int i = 0; i < table.length; i++) {
-            System.out.println(Arrays.deepToString(table[i]));
-        }
-    }
-
-
-    // j -колонна
-    // i - строка
-    static boolean check(String[][] tableCheck){
-        int indexI = 0;
-        int indexJ = 0;
-        for (int i = 0; i < tableCheck.length; i++) {
-            for (int j = 0; j < tableCheck.length; j++) {
-                if (i == 0){
-                    
-                }
+            for (int j = 0; j < table.length; j++) {
+                if (table[i][j] == "X") count++;
             }
         }
+        System.out.println(count);
+    }
+
+    // проверка по всем направлениям ферзя 
+    static boolean check(String[][] board, int fI, int fJ){
+            // Диагональ влево вверх
+            for (int i = fI, j = fJ; i>=0&&j>-1 ; i--, j--) {
+                if (board[i][j]=="X"){
+                    return false;
+                }
+            }
+            // Диагональ вправо вверх
+            for (int i = fI, j = fJ;  i>-1&&j <board.length; i--, j++) {
+                if (board[i][j]=="X"){
+                    return false;
+                }
+            }
+            // Диагональ влево вниз
+            for (int i = fI, j = fJ; i<board.length&&j>-1 ; i++, j--) {
+                if (board[i][j]=="X"){
+                    return false;
+                }
+            }
+            // Диагональ вправо вниз
+            for (int i = fI, j = fJ;  i<board.length&&j <board.length; i++, j++) {
+                if (board[i][j]=="X"){
+                    return false;
+                }
+            }
+            // Вертикаль
+            for (int i = 0;  i<board.length; i++) {
+                if (board[i][fJ]=="X"){
+                    return false;
+                }
+            }
+            // горизонталь
+            for (int j = 0;  j <board.length; j++) {
+                if (board[fI][j]=="X"){
+                    return false;
+                }
+            }
         return true;
+    }
+
+    // Принт доски 
+    static void printBoard(String[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            System.out.println(Arrays.deepToString(board[i]));
+        }
     }
 }
