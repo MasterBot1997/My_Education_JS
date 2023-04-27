@@ -13,35 +13,40 @@ public class Task03 {
         String[][] table = new String[8][8];
         Random rnd = new Random();
 
-        // Через рандом задаю расположение первого ферзя
-        int firstMoveI = rnd.nextInt(8);
-        int firstMoveJ = rnd.nextInt(8);
-        table[firstMoveI][firstMoveJ] = "X";
+        while (!finish(table)) {
+            int firstMoveI = rnd.nextInt(8);
+            int firstMoveJ = rnd.nextInt(8);
+            table[firstMoveI][firstMoveJ] = "X";
+            for (int j = 0; j < table.length; j++) {
+                for (int i = 0; i < table.length; i++) {
+                    if (check(table, i, j)) {
+                        table[i][j] = "X";
+                    } else if (table[i][j] == "X") {
+                        continue;
+                    } else {
+                        table[i][j] = "0";
+                    }
 
-        // Два цикла создания и печати доски c первым ферзем
-        for (int j = 0; j < table.length; j++) {
-            for (int i = 0; i < table.length; i++) {
-                if (check(table, i, j)) {
-                    table[i][j] = "X";
-                } else if (table[i][j]== "X") {
-                    continue;
-                }else{
-                    table[i][j] = "0";
                 }
-
             }
         }
 
         Task03.printBoard(table);
 
-        // Просто для самопроверки добавил вывод кол ва ферзей в консоль
+    }
+
+    static boolean finish(String[][] board) {
         int count = 0;
-        for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table.length; j++) {
-                if (table[i][j] == "X") count++;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == "X")
+                    count++;
             }
         }
-        System.out.println(count);
+        if (count == 8) {
+            return true;
+        }
+        return false;
     }
 
     // проверка по всем направлениям ферзя 
