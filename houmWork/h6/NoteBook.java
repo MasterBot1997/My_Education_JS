@@ -4,8 +4,7 @@ public class NoteBook {
     private String brand; // Имя ноутбука
     private String model; // Модель ноутбука
     private Integer sizeDisplay; // Размер дисплея
-    private String cpuManufacturer; // Производитель процессора
-    private Integer cpuModel; // Модель процессора
+    private String cpu; // Производитель процессора
     private Integer memorySize; // объем памяти
     private String gpu;
     private Integer ram; // Оперативная память
@@ -14,13 +13,12 @@ public class NoteBook {
 
     // Конструктор
     public NoteBook(String brand, String model,
-            Integer sizeDisplay, String cpuManufacturer, Integer cpuModel, Integer memorySize,
+            Integer sizeDisplay, String cpu, Integer memorySize,
             String gpu, Integer ram, String os, String color) {
         this.brand = brand;
         this.model = model;
         this.sizeDisplay = sizeDisplay;
-        this.cpuManufacturer = cpuManufacturer;
-        this.cpuModel = cpuModel;
+        this.cpu = cpu;
         this.memorySize = memorySize;
         this.gpu = gpu;
         this.ram = ram;
@@ -32,13 +30,13 @@ public class NoteBook {
     // Преобразование в строку для печати
     @Override
     public String toString() {
-        return String.format("%s %s %d %s %d %d %s %d %s %s",
-                brand, model, sizeDisplay, cpuManufacturer, cpuModel,
+        return String.format("%s %s %d %s %d %s %d %s %s",
+                brand, model, sizeDisplay, cpu,
                 memorySize, gpu, ram, os, color);
     }
 
     // Геттеры
-    public String getbrand() {
+    public String getBrand() {
         return brand;
     }
     public String getModel() {
@@ -47,12 +45,10 @@ public class NoteBook {
     public Integer getSizeDp() {
         return sizeDisplay;
     }
-    public String getCpuMan() {
-        return cpuManufacturer;
+    public String getCpu() {
+        return cpu;
     }
-    public Integer getCpuModel() {
-        return cpuModel;
-    }
+
     public Integer getMemorySize() {
         return memorySize;
     }
